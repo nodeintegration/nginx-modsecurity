@@ -35,7 +35,7 @@ RUN cd /opt && \
     rm -rf /opt/nginx* && \
     rm -rf /var/lib/apt/lists/*
 
-RUN ln -sf /dev/stdout /var/log/nginx/modsec_audit.log
+RUN ln -sf /dev/stdout /var/log/modsec_audit.log
 RUN mkdir /etc/nginx/modsecurity-data && \
     chown nginx: /etc/nginx/modsecurity-data && \
     cat /usr/src/owasp-modsecurity-crs/crs-setup.conf.example /usr/src/owasp-modsecurity-crs/rules/*.conf > /etc/nginx/modsecurity.conf && \
